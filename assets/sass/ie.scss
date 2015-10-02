@@ -1,0 +1,10 @@
+.box-details {
+    -webkit-box-shadow: #666 3px 3px 6px;
+    -moz-box-shadow: #666 3px 3px 6px;
+    box-shadow: #666 3px 3px 6px;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#888888')";
+}
+
+.box-details-down {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=135, Color='#888888')"!important;
+}

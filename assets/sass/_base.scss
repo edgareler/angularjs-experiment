@@ -1,0 +1,305 @@
+$font-stack                 : Tahoma, sans-serif;
+$font-size-default          : 1.0;
+$primary-color              : #1E171A;
+$contrasted-dark-default    : #000000;
+$contrasted-light-default   : #FFFFFF;
+$link-color                 : #2E74B2;
+$red                        : #C31B25;
+$red-boxes                  : #BE0712;
+$green                      : #61953F;
+$green-boxes                : #548039;
+$green-chart                : #72AC4D;
+$green-alpha                : #C6DFB5;
+$blue                       : #427FB3;
+$blue-boxes                 : #5E9CD3;
+$gray-border                : #CBCBCB;
+$gray-bg                    : #D8D8D8;
+$light-gray                 : #CFCFCF;
+$gray                       : #898481;
+$gray-shadow                : #888888;
+$yellow                     : #FCBC22;
+$yellow-boxes               : #FED86E;
+$orange-chart               : #EB7D3B;
+$orange-alpha               : #F6CBAE;
+$header-height              : 3.250;
+$box-height                 : 2.250;
+$border-width               : 0.160;
+$item-box-width             : 2.813;
+$item-box-height            : 1.750;
+$shadow-size                : 0.263;
+$shadow-blur-size           : 0.418;
+
+@import "compass/reset";
+
+@mixin font-size($sizeValue: 1.0) {
+    font-size: ($sizeValue * 16) + px;
+    font-size: $sizeValue + rem;
+}
+
+@mixin width($sizeValue: 1.0) {
+    width: ($sizeValue * 16) + px;
+    width: $sizeValue + rem;
+}
+
+@mixin min-width($sizeValue: 1.0) {
+    min-width: ($sizeValue * 16) + px;
+    min-width: $sizeValue + rem;
+}
+
+@mixin height($sizeValue: 1.0) {
+    height: ($sizeValue * 16) + px;
+    height: $sizeValue + rem;
+}
+
+@mixin min-height($sizeValue: 1.0) {
+    min-height: ($sizeValue * 16) + px;
+    min-height: $sizeValue + rem;
+}
+
+@mixin margin($top: 1.0, $right: 1.0, $bottom: 1.0, $left: 1.0) {
+    margin: ($top * 16) + px ($right * 16) + px ($bottom * 16) + px ($left * 16) + px;
+    margin: $top + rem $right + rem $bottom + rem $left + rem;
+}
+
+@mixin margin-top($sizeValue: 1.0) {
+    margin-top: ($sizeValue * 16) + px;
+    margin-top: $sizeValue + rem;
+}
+
+@mixin margin-right($sizeValue: 1.0) {
+    margin-right: ($sizeValue * 16) + px;
+    margin-right: $sizeValue + rem;
+}
+
+@mixin margin-bottom($sizeValue: 1.0) {
+    margin-bottom: ($sizeValue * 16) + px;
+    margin-bottom: $sizeValue + rem;
+}
+
+@mixin margin-left($sizeValue: 1.0) {
+    margin-left: ($sizeValue * 16) + px;
+    margin-left: $sizeValue + rem;
+}
+
+@mixin padding($top: 1.0, $right: 1.0, $bottom: 1.0, $left: 1.0) {
+    padding: ($top * 16) + px ($right * 16) + px ($bottom * 16) + px ($left * 16) + px;
+    padding: $top + rem $right + rem $bottom + rem $left + rem;
+}
+
+@mixin padding-top($sizeValue: 1.0) {
+    padding-top: ($sizeValue * 16) + px;
+    padding-top: $sizeValue + rem;
+}
+
+@mixin padding-left($sizeValue: 1.0) {
+    padding-left: ($sizeValue * 16) + px;
+    padding-left: $sizeValue + rem;
+}
+
+@mixin line-height($sizeValue: 1.0) {
+    line-height: ($sizeValue * 16) + px;
+    line-height: $sizeValue + rem;
+}
+
+@mixin border-width($sizeValue: 1.0) {
+    border-width: ($sizeValue * 16) + px;
+    border-width: $sizeValue + rem;
+}
+
+@mixin letter-spacing($sizeValue: 1.0) {
+    letter-spacing: ($sizeValue * 16) + px;
+    letter-spacing: $sizeValue + rem;
+}
+
+@mixin background-position($top: 1.0, $left: 1.0) {
+    background-position: ($top * 16) + px ($left * 16) + px;
+    background-position: $top + rem $left + rem;
+}
+
+* {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.a {
+    color: $link-color;
+    text-decoration: underline;
+}
+
+.font-default {
+    font-family: $font-stack;
+    @include font-size($font-size-default);
+}
+
+
+body {
+    background: white;
+    font: 100% $font-stack;
+    color: $primary-color;
+    @include letter-spacing(0.01);
+    cursor: default;
+}
+
+.font-875 {
+    font-family: $font-stack;
+    @include font-size(0.875);
+}
+
+.page-center {
+    width: 100%;
+    max-width: 1144px;
+    min-width: 1093px;
+    margin: auto;
+}
+
+.h-center {
+    text-align: center;
+}
+
+.v-center {
+    vertical-align: middle;
+}
+
+.v-top {
+    vertical-align: top;
+}
+
+.box-display {
+    display: inline-block;
+}
+
+.box-default {
+    @extend .box-display;
+    @include height($box-height);
+    @include line-height($box-height);
+}
+
+.border-default {
+    @include border-width($border-width);
+    border-style: solid;
+    border-color: $contrasted-dark-default;
+}
+
+.border-3 {
+    @include border-width(0.200);
+}
+
+.border-gray {
+    @extend .border-default;
+    border-color: $gray-border;
+}
+
+.border-blue {
+    @extend .border-default;
+    border-color: $blue;
+}
+
+.border-green {
+    @extend .border-default;
+    border-color: $green;
+}
+
+.border-red {
+    @extend .border-default;
+    border-color: $red;
+}
+
+.bg-blue {
+    background: url(../images/bg-blue.png) no-repeat white;
+}
+
+.bg-green {
+    background: url(../images/bg-green.png) no-repeat white;
+}
+
+.bg-red {
+    background: url(../images/bg-red.png) no-repeat white;
+}
+
+.box-gray {
+    @extend .bg-blue;
+    @extend .border-gray;
+    color: $gray;
+}
+
+.box-blue {
+    @extend .bg-blue;
+    @extend .border-blue;
+    color: $blue;
+}
+
+.box-green {
+    @extend .bg-green;
+    @extend .border-green;
+    color: $green;
+}
+
+.box-red {
+    @extend .bg-red;
+    @extend .border-red;
+    color: $red;
+}
+
+@mixin box-shadow($size, $blur, $color) {
+    -webkit-box-shadow: $size $size $blur $color;
+    -moz-box-shadow: $size $size $blur $color;
+    box-shadow: $size $size $blur $color;
+}
+
+.shadow-default {
+    @include box-shadow($shadow-size + rem, $shadow-blur-size + rem, $gray-shadow);
+}
+
+.shadow-down {
+    @include box-shadow(0, 0, $gray-shadow);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.contrasted-light-default {
+    color: $contrasted-light-default;
+}
+
+.contrasted-dark-default {
+    color: $contrasted-dark-default;
+}
+
+.width-half {
+    width: 50%;
+}
+
+.text-dark-14 {
+    @extend .font-875;
+    @extend .contrasted-dark-default; 
+}
+
+.text-dark-11 {
+    @include font-size(0.688);
+    @extend .contrasted-dark-default; 
+}
+
+.yellow {
+    color: $yellow;
+}
+
+.green {
+    color: $green;
+}
+
+.gray {
+    color: $gray;
+}
+
+.red {
+    color: $red;
+}

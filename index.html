@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app" ng-strict-di>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimal-ui">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Project Dashboard &#8211; Crossover</title>
+        
+        <!-- inject-vendor:css -->
+        <link href="vendors/jquery/webui-popover/jquery.webui-popover.min.css" rel="stylesheet" type="text/css" />       
+        
+        <!-- inject:css -->
+        <link href="assets/stylesheets/application.css" rel="stylesheet" type="text/css" />
+        <!--[if lte IE 8]>
+            <link href="assets/stylesheets/ie.css" rel="stylesheet" type="text/css" />
+        <![endif]-->
+        <!-- endinject -->
+    </head>
+    <body>
+        <div id="grid">
+            <div id="header">
+                <div class="col-01">
+                    Changelist / Build
+                </div
+                ><div class="col-02">
+                    Owner
+                </div
+                ><div class="col-03">
+                    Time Started
+                </div
+                ><div class="col-04">
+                    State
+                </div
+                ><div class="col-05">
+                    Metrics
+                </div
+                ><div class="col-06">
+                    Build
+                </div
+                ><div class="col-07">
+                    Unit Test
+                </div
+                ><div class="col-08">
+                    Functional Test
+                </div>
+            </div>
+            
+            <ul ng-controller="Grid as grid">
+                <li ng-repeat="l in gridData.changelist" class="li-{{getStateColor(l.state)}}" id="li-{{$index}}" index="{{$index}}" repeat-completed>
+                    <div class="item-header">
+                        <div class="item-code">
+                            <img ng-src="assets/images/{{getTypeImagePrefix(l.type)}}-{{getStateColor(l.state)}}.png" width="36" height="26" />
+                            <span data-title="Item Details" data-content="Open details about this build.">{{l.code}}</span>
+                        </div
+                        ><div class="item-owner">
+                            {{l.owner}}
+                        </div
+                        ><div class="item-time">
+                            {{l.datetime}}
+                        </div
+                        ><div class="item-state">
+                            {{l.state}}
+                        </div
+                        ><div class="item-metrics item-indicator">
+                            <div class="item-box-container">
+                                <div class="item-box-{{l.metrics.status}}" data-value="{{l.metrics.average}}"></div>
+                            </div>
+                        </div
+                        ><div class="item-build item-indicator">
+                            <div class="item-box-container">
+                                <div class="item-box-{{l.build.status}}"></div>
+                            </div>
+                        </div
+                        ><div class="item-unit-test item-indicator">
+                            <div class="item-box-container">
+                                <div class="item-box-{{l.unittest.status}}"></div>
+                            </div>
+                        </div
+                        ><div class="item-functional-test item-indicator">
+                            <div class="item-box-container">
+                                <div class="item-box-{{l.functionaltest.status}}"></div>
+                            </div>
+                        </div>
+                    </div
+                    ><div class="item-details" id="item-details-{{$index}}">
+                        <div class="box-details box-details-{{l.metrics.status}} popover" data-title="Metrics Information" data-content="{{l.metrics.information.details}}">
+                            <div class="box-details-title">
+                                Metrics
+                            </div>
+                            <div class="box-details-metrics-item {{getMetricsTendency(l.metrics.test.tendency)}}">
+                                <div class="metric">
+                                    {{l.metrics.test.value}}
+                                </div>
+                                <div class="task">
+                                    Test
+                                </div>
+                            </div
+                            ><div class="box-details-metrics-item {{getMetricsTendency(l.metrics.maintainability.tendency)}}">
+                                <div class="metric">
+                                    {{l.metrics.maintainability.value}}
+                                </div>
+                                <div class="task">
+                                    Maintainability
+                                </div>
+                            </div
+                            ><div class="box-details-metrics-item {{getMetricsTendency(l.metrics.security.tendency)}}">
+                                <div class="metric">
+                                    {{l.metrics.security.value}}
+                                </div>
+                                <div class="task">
+                                    Security
+                                </div>
+                            </div
+                            ><div class="box-details-metrics-item {{getMetricsTendency(l.metrics.workmanship.tendency)}}">
+                                <div class="metric">
+                                    {{l.metrics.workmanship.value}}
+                                </div>
+                                <div class="task">
+                                    Workmanship
+                                </div>
+                            </div>
+                        </div
+                        ><div class="box-details box-details-{{l.build.status}} popover" data-title="Build Information" data-content="{{l.build.information.details}}">
+                            <div class="box-details-title">
+                                Build
+                            </div>
+                            <div class="box-details-build-item-{{getBuildDoneColor(l.build.debug)}}">
+                                Debug
+                            </div
+                            ><div class="box-details-build-item-{{getBuildDoneColor(l.build.release)}}">
+                                Release
+                            </div>
+                            <div class="box-details-build-datetime">
+                                {{l.build.datetime}}
+                            </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+                        </div
+                        ><div class="box-details box-details-{{l.unittest.status}} popover" data-title="Unit Test Information" data-content="{{l.unittest.information.details}}">
+                            <div class="box-details-title">
+                                Unit Test
+                            </div>
+                            <div class="box-details-test-chart" id="unit-test-chart-{{$index}}" data-passed="{{l.unittest.passed}}" data-notpassed="{{l.unittest.notpassed}}">
+                            </div
+                            ><div class="box-details-test-value-container">
+                                <div class="box-details-test-value" data-value="{{l.unittest.percentage}}">
+                                    {{getFullPercentage(l.unittest.percentage)}}%
+                                </div>
+                                <div class="box-details-test-passed">
+                                    tests passed
+                                </div>
+                            </div>
+                            <div class="box-details-test-code">
+                                <div class="box-details-test-code-green" data-value="{{l.unittest.codecovered}}">
+                                </div
+                                ><div class="box-details-test-code-orange">
+                                </div>
+                                <div class="box-details-test-code-text">
+                                    <div class="value">
+                                        {{getFullPercentage(l.unittest.codecovered)}}%
+                                    </div>
+                                    <div class="info">
+                                        code covered
+                                    </div>
+                                </div>
+                            </div>
+                        </div
+                        ><div class="box-details box-details-{{l.functionaltest.status}} popover" data-title="Functional Test Information" data-content="{{l.functionaltest.information.details}}">
+                            <div class="box-details-title">
+                                Functional Test
+                            </div>
+                            <div class="box-details-test-chart" id="functional-test-chart-{{$index}}" data-passed="{{l.functionaltest.passed}}" data-notpassed="{{l.functionaltest.notpassed}}">
+                            </div
+                            ><div class="box-details-test-value-container">
+                                <div class="box-details-test-value" data-value="{{l.functionaltest.percentage}}">
+                                    {{getFullPercentage(l.functionaltest.percentage)}}%
+                                </div>
+                                <div class="box-details-test-passed">
+                                    tests passed
+                                </div>
+                            </div>
+                            <div class="box-details-test-code">
+                                <div class="box-details-test-code-green" data-value="{{l.functionaltest.codecovered}}">
+                                </div
+                                ><div class="box-details-test-code-orange">
+                                </div>
+                                <div class="box-details-test-code-text">
+                                    <div class="value">
+                                        {{getFullPercentage(l.functionaltest.codecovered)}}%
+                                    </div>
+                                    <div class="info">
+                                        code covered
+                                    </div>
+                                </div>
+                            </div>
+                        </div
+                        ><div class="box-result">
+                            <div class="title">
+                                Result
+                            </div>
+                            <div class="message {{l.result.status}}">
+                                {{l.result.message}}
+                            </div>
+                            <div class="description {{l.result.status}}">
+                                {{l.result.description}}
+                            </div>
+                            <div ng-bind-html="getResultAction(l.result.action)">
+                                {{getResultAction(l.result.action)}}
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+        <!-- inject-vendor:js -->
+        <script type="text/javascript" src="vendors/angular/angular.min.js"></script>
+        <script type="text/javascript" src="vendors/angular/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="vendors/jquery/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="vendors/jquery/webui-popover/jquery.webui-popover.min.js"></script>
+        <script type="text/javascript" src="vendors/highcharts/highcharts.js"></script>
+        
+        <!-- inject:js -->
+        <script type="text/javascript" src="assets/scripts/script.js"></script>
+        <script type="text/javascript" src="assets/data/data.js"></script>
+        
+        <script type="text/javascript" src="app/app.module.js"></script>
+        <script type="text/javascript" src="app/grid/grid.module.js"></script>
+        <script type="text/javascript" src="app/grid/grid.js"></script>
+        <script type="text/javascript" src="app/grid/repeatCompleted.js"></script>
+        <!-- endinject -->
+    </body>
+</html>

@@ -1,0 +1,380 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.a {
+  color: #2E74B2;
+  text-decoration: underline; }
+
+.font-default, #grid div#header div, #grid li div.item-header div.item-time, #grid li div.item-header div.item-state, #grid li div.item-details div.box-result {
+  font-family: Tahoma, sans-serif;
+  font-size: 16px;
+  font-size: 1rem; }
+
+body {
+  background: white;
+  font: 100% Tahoma, sans-serif;
+  color: #1E171A;
+  letter-spacing: 0.16px;
+  letter-spacing: 0.01rem;
+  cursor: default; }
+
+.font-875, .text-dark-14, #grid li div.item-details div.box-details-metrics-item div.task, #grid li div.item-details div.box-details-build-datetime, #grid li div.item-header div.item-code, #grid li div.item-header div.item-owner {
+  font-family: Tahoma, sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem; }
+
+.page-center, #grid {
+  width: 100%;
+  max-width: 1144px;
+  min-width: 1093px;
+  margin: auto; }
+
+.h-center, #grid div#header div, #grid li div.item-header div.item-owner, #grid li div.item-header div.item-time, #grid li div.item-header div.item-state, #grid li div.item-header div.item-metrics, #grid li div.item-header div.item-build, #grid li div.item-header div.item-unit-test, #grid li div.item-header div.item-functional-test, #grid li div.item-details div.box-details-item, #grid li div.item-details div.box-details-metrics-item, #grid li div.item-details div.box-details-build-item, #grid li div.item-details div.box-details-build-item-gray, #grid li div.item-details div.box-details-build-item-blue, #grid li div.item-details div.box-details-test-chart, #grid li div.item-details div.box-details-test-value-container, #grid li div.item-details div.box-details-build-datetime, #grid li div.item-details div.box-details-test-passed, #grid li div.item-details div.box-details-test-code-text, #grid li div.item-details div.box-result {
+  text-align: center; }
+
+.v-center {
+  vertical-align: middle; }
+
+.v-top, #grid li div.item-header div.item, #grid li div.item-header div.item-code, #grid li div.item-header div.item-owner, #grid li div.item-header div.item-time, #grid li div.item-header div.item-state, #grid li div.item-header div.item-metrics, #grid li div.item-header div.item-build, #grid li div.item-header div.item-unit-test, #grid li div.item-header div.item-functional-test, #grid li div.item-details div.box-details, #grid li div.item-details div.box-details-gray, #grid li div.item-details div.box-details-blue, #grid li div.item-details div.box-details-green, #grid li div.item-details div.box-details-red, #grid li div.item-details div.box-details-item, #grid li div.item-details div.box-details-metrics-item, #grid li div.item-details div.box-details-build-item, #grid li div.item-details div.box-details-build-item-gray, #grid li div.item-details div.box-details-build-item-blue, #grid li div.item-details div.box-details-test-chart, #grid li div.item-details div.box-details-test-value-container, #grid li div.item-details div.box-details-test-code-green, #grid li div.item-details div.box-details-test-code-orange, #grid li div.item-details div.box-result {
+  vertical-align: top; }
+
+.box-display, .box-default, #grid div#header div, #grid li div.item-header div.item, #grid li div.item-header div.item-code, #grid li div.item-header div.item-owner, #grid li div.item-header div.item-time, #grid li div.item-header div.item-state, #grid li div.item-header div.item-metrics, #grid li div.item-header div.item-build, #grid li div.item-header div.item-unit-test, #grid li div.item-header div.item-functional-test, #grid li div.item-header div.item-box-container, #grid li div.item-details div.box-details, #grid li div.item-details div.box-details-gray, #grid li div.item-details div.box-details-blue, #grid li div.item-details div.box-details-green, #grid li div.item-details div.box-details-red, #grid li div.item-details div.box-details-item, #grid li div.item-details div.box-details-metrics-item, #grid li div.item-details div.box-details-build-item, #grid li div.item-details div.box-details-build-item-gray, #grid li div.item-details div.box-details-build-item-blue, #grid li div.item-details div.box-details-test-chart, #grid li div.item-details div.box-details-test-value-container, #grid li div.item-details div.box-details-test-value-parent, #grid li div.item-details div.box-details-test-code-green, #grid li div.item-details div.box-details-test-code-orange, #grid li div.item-details div.box-result, #grid li div.item-details div.box-result div.button, #grid li div.item-details div.box-result div.button-magn, #grid li div.item-details div.box-result span, #grid li div.item-details div.box-result select {
+  display: inline-block; }
+
+.box-default, #grid div#header div, #grid li div.item-header div.item, #grid li div.item-header div.item-code, #grid li div.item-header div.item-owner, #grid li div.item-header div.item-time, #grid li div.item-header div.item-state, #grid li div.item-header div.item-metrics, #grid li div.item-header div.item-build, #grid li div.item-header div.item-unit-test, #grid li div.item-header div.item-functional-test, #grid li div.item-header div.item-box-container {
+  height: 36px;
+  height: 2.25rem;
+  line-height: 36px;
+  line-height: 2.25rem; }
+
+.border-default, .border-gray, .box-gray, #grid li.li-gray, #grid li div.item-details div.box-details-gray, #grid li div.item-header div.item-box-container, #grid li div.item-details div.box-result div.button, #grid li div.item-details div.box-result div.button-magn, .border-blue, .box-blue, #grid li.li-blue, #grid li div.item-details div.box-details-blue, .border-green, .box-green, #grid li.li-green, #grid li div.item-details div.box-details-green, .border-red, .box-red, #grid li.li-red, #grid li div.item-details div.box-details-red {
+  border-width: 2.56px;
+  border-width: 0.16rem;
+  border-style: solid;
+  border-color: #000000; }
+
+.border-3, #grid li div.item-details div.box-details, #grid li div.item-details div.box-details-gray, #grid li div.item-details div.box-details-blue, #grid li div.item-details div.box-details-green, #grid li div.item-details div.box-details-red {
+  border-width: 3.2px;
+  border-width: 0.2rem; }
+
+.border-gray, .box-gray, #grid li.li-gray, #grid li div.item-details div.box-details-gray, #grid li div.item-header div.item-box-container, #grid li div.item-details div.box-result div.button, #grid li div.item-details div.box-result div.button-magn {
+  border-color: #CBCBCB; }
+
+.border-blue, .box-blue, #grid li.li-blue, #grid li div.item-details div.box-details-blue {
+  border-color: #427FB3; }
+
+.border-green, .box-green, #grid li.li-green, #grid li div.item-details div.box-details-green {
+  border-color: #61953F; }
+
+.border-red, .box-red, #grid li.li-red, #grid li div.item-details div.box-details-red {
+  border-color: #C31B25; }
+
+.bg-blue, .box-gray, #grid li.li-gray, #grid li div.item-details div.box-details-gray, .box-blue, #grid li.li-blue, #grid li div.item-details div.box-details-blue {
+  background: url(../images/bg-blue.png) no-repeat white; }
+
+.bg-green, .box-green, #grid li.li-green, #grid li div.item-details div.box-details-green {
+  background: url(../images/bg-green.png) no-repeat white; }
+
+.bg-red, .box-red, #grid li.li-red, #grid li div.item-details div.box-details-red {
+  background: url(../images/bg-red.png) no-repeat white; }
+
+.box-gray, #grid li.li-gray, #grid li div.item-details div.box-details-gray {
+  color: #898481; }
+
+.box-blue, #grid li.li-blue, #grid li div.item-details div.box-details-blue {
+  color: #427FB3; }
+
+.box-green, #grid li.li-green, #grid li div.item-details div.box-details-green {
+  color: #61953F; }
+
+.box-red, #grid li.li-red, #grid li div.item-details div.box-details-red {
+  color: #C31B25; }
+
+.shadow-default, #grid li div.item-details div.box-details, #grid li div.item-details div.box-details-gray, #grid li div.item-details div.box-details-blue, #grid li div.item-details div.box-details-green, #grid li div.item-details div.box-details-red {
+  -webkit-box-shadow: 0.263rem 0.263rem 0.418rem #888888;
+  -moz-box-shadow: 0.263rem 0.263rem 0.418rem #888888;
+  box-shadow: 0.263rem 0.263rem 0.418rem #888888; }
+
+.shadow-down, #grid li div.item-details div.box-details-down {
+  -webkit-box-shadow: 0 0 0 #888888;
+  -moz-box-shadow: 0 0 0 #888888;
+  box-shadow: 0 0 0 #888888; }
+
+.pointer, #grid li div.item-header, #grid li div.item-details div.box-details, #grid li div.item-details div.box-details-gray, #grid li div.item-details div.box-details-blue, #grid li div.item-details div.box-details-green, #grid li div.item-details div.box-details-red, #grid li div.item-details div.box-result div.button, #grid li div.item-details div.box-result div.button-magn {
+  cursor: pointer; }
+
+.font-bold, #grid li div.item-details div.box-details-title, #grid li div.item-details div.box-details-test-code-text div.value {
+  font-weight: bold; }
+
+.contrasted-light-default, #grid li div.item-details div.arrow-number-light div.metric, #grid li div.item-details div.arrow-up div.metric, #grid li div.item-details div.arrow-down div.metric, #grid li div.item-details div.box-result div.button, #grid li div.item-details div.box-result div.button-magn {
+  color: #FFFFFF; }
+
+.contrasted-dark-default, .text-dark-14, #grid li div.item-details div.box-details-metrics-item div.task, #grid li div.item-details div.box-details-build-datetime, .text-dark-11, #grid li div.item-details div.box-details-test-passed, #grid li div.item-details div.box-details-test-code-text div.info, #grid li div.item-details div.arrow-number-dark div.metric, #grid li div.item-details div.arrow-right div.metric, #grid li div.item-details div.arrow-left div.metric, #grid li div.item-details div.circle-idle div.metric, #grid li div.item-details div.box-result div.title {
+  color: #000000; }
+
+.width-half, #grid li div.item-details div.box-details-metrics-item, #grid li div.item-details div.box-details-build-item, #grid li div.item-details div.box-details-build-item-gray, #grid li div.item-details div.box-details-build-item-blue {
+  width: 50%; }
+
+.text-dark-11, #grid li div.item-details div.box-details-test-passed, #grid li div.item-details div.box-details-test-code-text div.info {
+  font-size: 11.008px;
+  font-size: 0.688rem; }
+
+.yellow {
+  color: #FCBC22; }
+
+.green {
+  color: #61953F; }
+
+.gray {
+  color: #898481; }
+
+.red {
+  color: #C31B25; }
+
+#grid {
+  padding: 0px 2.56px 0px 2.56px;
+  padding: 0rem 0.16rem 0rem 0.16rem; }
+  #grid div.col-01, #grid li div.item-header div.item-code {
+    width: 16%; }
+  #grid div.col-02, #grid li div.item-header div.item-owner {
+    width: 10%; }
+  #grid div.col-03, #grid li div.item-header div.item-time {
+    width: 19%; }
+  #grid div.col-04, #grid li div.item-header div.item-state {
+    width: 11%; }
+  #grid div.col-05, #grid li div.item-header div.item-metrics {
+    width: 9%; }
+  #grid div.col-06, #grid li div.item-header div.item-build {
+    width: 9%; }
+  #grid div.col-07, #grid li div.item-header div.item-unit-test {
+    width: 9%; }
+  #grid div.col-08, #grid li div.item-header div.item-functional-test {
+    width: 10%; }
+  #grid div#header {
+    margin-top: 16px;
+    margin-top: 1rem; }
+    #grid div#header div {
+      line-height: 16px;
+      line-height: 1rem; }
+  #grid li {
+    min-height: 36px;
+    min-height: 2.25rem;
+    margin-bottom: 14px;
+    margin-bottom: 0.875rem; }
+    #grid li div.item-header div.item-code img {
+      float: left;
+      margin: 5.6px 16px 5.6px 5.6px;
+      margin: 0.35rem 1rem 0.35rem 0.35rem; }
+    #grid li div.item-header div.item-box-container {
+      background: #D8D8D8;
+      margin-top: 1.6px;
+      margin-top: 0.1rem;
+      width: 45.008px;
+      width: 2.813rem;
+      height: 28px;
+      height: 1.75rem; }
+      #grid li div.item-header div.item-box-container div.item-box, #grid li div.item-header div.item-box-container div.item-box-red, #grid li div.item-header div.item-box-container div.item-box-green, #grid li div.item-header div.item-box-container div.item-box-blue, #grid li div.item-header div.item-box-container div.item-box-gray {
+        width: 100%;
+        height: 100%; }
+      #grid li div.item-header div.item-box-container div.item-box-red {
+        background: #C31B25; }
+      #grid li div.item-header div.item-box-container div.item-box-green {
+        background: #548039; }
+      #grid li div.item-header div.item-box-container div.item-box-blue {
+        background: #5E9CD3; }
+      #grid li div.item-header div.item-box-container div.item-box-gray {
+        background: #D8D8D8; }
+    #grid li div.item-details {
+      display: none;
+      height: 224px;
+      height: 14rem;
+      width: 100%; }
+      #grid li div.item-details div.box-details, #grid li div.item-details div.box-details-gray, #grid li div.item-details div.box-details-blue, #grid li div.item-details div.box-details-green, #grid li div.item-details div.box-details-red {
+        min-width: 194px;
+        min-width: 12.125rem;
+        height: 174px;
+        height: 10.875rem;
+        margin: 19.2px 4.8px 0px 19.2px;
+        margin: 1.2rem 0.3rem 0rem 1.2rem;
+        width: 17.4%; }
+      #grid li div.item-details div.box-details-down {
+        margin: 23.408px 0.592px -4.208px 23.408px;
+        margin: 1.463rem 0.037rem -0.263rem 1.463rem; }
+      #grid li div.item-details div.box-details-title {
+        margin: 6.96px 6.688px 1.6px 6.688px;
+        margin: 0.435rem 0.418rem 0.1rem 0.418rem; }
+      #grid li div.item-details div.box-details-item, #grid li div.item-details div.box-details-metrics-item, #grid li div.item-details div.box-details-build-item, #grid li div.item-details div.box-details-build-item-gray, #grid li div.item-details div.box-details-build-item-blue, #grid li div.item-details div.box-details-test-chart, #grid li div.item-details div.box-details-test-value-container {
+        background-position: center top;
+        background-repeat: no-repeat; }
+      #grid li div.item-details div.box-details-metrics-item {
+        height: 73.6px;
+        height: 4.6rem; }
+      #grid li div.item-details div.arrow-number, #grid li div.item-details div.arrow-number-light div.metric, #grid li div.item-details div.arrow-up div.metric, #grid li div.item-details div.arrow-down div.metric, #grid li div.item-details div.arrow-number-dark div.metric, #grid li div.item-details div.arrow-right div.metric, #grid li div.item-details div.arrow-left div.metric, #grid li div.item-details div.circle-idle div.metric {
+        font-size: 20px;
+        font-size: 1.25rem;
+        height: 54px;
+        height: 3.375rem;
+        line-height: 54px;
+        line-height: 3.375rem; }
+      #grid li div.item-details div.arrow-up {
+        background-image: url(../images/arrow-up.png); }
+      #grid li div.item-details div.arrow-down {
+        background-image: url(../images/arrow-down.png); }
+      #grid li div.item-details div.arrow-right {
+        background-image: url(../images/arrow-right.png); }
+      #grid li div.item-details div.arrow-left {
+        background-image: url(../images/arrow-left.png); }
+      #grid li div.item-details div.circle-idle {
+        background-image: url(../images/circle-idle.png); }
+      #grid li div.item-details div.box-details-build-item, #grid li div.item-details div.box-details-build-item-gray, #grid li div.item-details div.box-details-build-item-blue {
+        font-size: 14px;
+        font-size: 0.875rem;
+        padding-top: 63.2px;
+        padding-top: 3.95rem;
+        height: 43.2px;
+        height: 2.7rem;
+        margin-top: 21.6px;
+        margin-top: 1.35rem; }
+      #grid li div.item-details div.box-details-build-item-gray {
+        background-image: url(../images/pc-gray-big.png);
+        color: #898481; }
+      #grid li div.item-details div.box-details-build-item-blue {
+        background-image: url(../images/pc-blue-big.png);
+        color: #427FB3; }
+      #grid li div.item-details div.box-details-test-chart {
+        width: 110px;
+        width: 6.875rem;
+        height: 110px;
+        height: 6.875rem;
+        font-weight: normal; }
+      #grid li div.item-details div.box-details-test-value-container {
+        width: 84px;
+        width: 5.25rem;
+        height: 110px;
+        height: 6.875rem;
+        line-height: 110px;
+        line-height: 6.875rem; }
+      #grid li div.item-details div.box-details-test-value-parent {
+        height: 47.68px;
+        height: 2.98rem; }
+      #grid li div.item-details div.box-details-test-value {
+        line-height: 34.4px;
+        line-height: 2.15rem;
+        font-size: 34.4px;
+        font-size: 2.15rem;
+        margin-top: 31.2px;
+        margin-top: 1.95rem; }
+      #grid li div.item-details div.box-details-test-passed {
+        line-height: 13.28px;
+        line-height: 0.83rem; }
+      #grid li div.item-details div.box-details-test-code {
+        width: 90%;
+        height: 32px;
+        height: 2rem;
+        margin: auto; }
+      #grid li div.item-details div.box-details-test-code-green {
+        width: 0%;
+        height: 100%;
+        background: #C6DFB5; }
+      #grid li div.item-details div.box-details-test-code-orange {
+        width: 100%;
+        height: 100%;
+        background: #F6CBAE; }
+      #grid li div.item-details div.box-details-test-code-text {
+        position: relative;
+        margin-top: -32px;
+        margin-top: -2rem; }
+        #grid li div.item-details div.box-details-test-code-text div.value {
+          display: block;
+          line-height: 20.8px;
+          line-height: 1.3rem; }
+        #grid li div.item-details div.box-details-test-code-text div.info {
+          line-height: 10.08px;
+          line-height: 0.63rem; }
+      #grid li div.item-details div.box-result {
+        width: 17.5%;
+        margin-top: 19.2px;
+        margin-top: 1.2rem; }
+        #grid li div.item-details div.box-result div.message {
+          margin-top: 16px;
+          margin-top: 1rem; }
+        #grid li div.item-details div.box-result div.description {
+          font-size: 28.8px;
+          font-size: 1.8rem; }
+        #grid li div.item-details div.box-result div.button, #grid li div.item-details div.box-result div.button-magn {
+          font-size: 14px;
+          font-size: 0.875rem;
+          margin-top: 16px;
+          margin-top: 1rem;
+          padding: 6.4px 9.6px 8px 9.6px;
+          padding: 0.4rem 0.6rem 0.5rem 0.6rem;
+          background: #5E9CD3; }
+        #grid li div.item-details div.box-result div.button-magn {
+          background: url(../images/magn.png) #5E9CD3 no-repeat;
+          background-position: 11.2px 8px;
+          background-position: 0.7rem 0.5rem;
+          padding-left: 35.2px;
+          padding-left: 2.2rem; }
+        #grid li div.item-details div.box-result span {
+          padding: 0px 16px 0px 16px;
+          padding: 0rem 1rem 0rem 1rem; }
+        #grid li div.item-details div.box-result select {
+          margin-top: 8px;
+          margin-top: 0.5rem; }
+
+.ng-hide {
+  display: none !important; }
+
+/*# sourceMappingURL=application.css.map */

@@ -1,0 +1,431 @@
+@import "base";
+
+#grid {
+    @extend .page-center;
+    @include padding(0, $border-width, 0, $border-width);
+    
+    div.col-01 {
+        width: 16%;
+    }
+
+    div.col-02 {
+        width: 10%;
+    }
+
+    div.col-03 {
+        width: 19%;
+    }
+
+    div.col-04 {
+        width: 11%;
+    }
+
+    div.col-05 {
+        width: 9%;
+    }
+
+    div.col-06 {
+        width: 9%;
+    }
+
+    div.col-07 {
+        width: 9%;
+    }
+
+    div.col-08 {
+        width: 10%;
+    }
+    
+    div#header {
+        @include margin-top();
+        
+        div {
+            @extend .font-default;
+            @extend .box-default;
+            @extend .h-center;
+            @include line-height();
+        }
+    }
+    
+    li.li-gray {
+        @extend .box-gray;
+    }
+
+    li.li-blue {
+        @extend .box-blue;
+    }
+
+    li.li-green {
+        @extend .box-green
+    }
+
+    li.li-red {
+        @extend .box-red;
+    }
+    
+    li {
+        @include min-height($box-height);
+        @include margin-bottom(0.875);
+        
+        div.item-header {
+            @extend .pointer;
+            
+            div.item-code {
+                @extend div.item;
+                @extend div.col-01;
+                @extend .font-875;
+                
+                img {
+                    float: left;
+                    @include margin(0.35, 1.0, 0.35, 0.35);
+                }
+            }
+            
+            div.item {
+                @extend .box-default;
+                @extend .v-top;
+            }
+
+            div.item-owner {
+                @extend div.item;
+                @extend div.col-02;
+                @extend .font-875;
+                @extend .h-center;
+            }
+
+            div.item-time {
+                @extend div.item;
+                @extend div.col-03;
+                @extend .font-default;
+                @extend .h-center;
+            }
+
+            div.item-state {
+                @extend div.item;
+                @extend div.col-04;
+                @extend .font-default;
+                @extend .h-center;
+            }
+
+            div.item-metrics {
+                @extend div.item;
+                @extend .h-center;
+                @extend div.col-05;
+            }
+
+            div.item-build {
+                @extend div.item;
+                @extend .h-center;
+                @extend div.col-06;
+            }
+
+            div.item-unit-test {
+                @extend div.item;
+                @extend .h-center;
+                @extend div.col-07;
+            }
+
+            div.item-functional-test {
+                @extend div.item;
+                @extend .h-center;
+                @extend div.col-08;
+            }
+            
+            div.item-box-container {
+                @extend .box-default;
+                @extend .border-gray;
+                background: $gray-bg;
+                @include margin-top(0.10);
+                @include width($item-box-width);
+                @include height($item-box-height);
+                                
+                div.item-box {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                div.item-box-red {
+                    @extend .item-box;
+                    background: $red;
+                }
+
+                div.item-box-green {
+                    @extend .item-box;
+                    background: $green-boxes;
+                }
+
+                div.item-box-blue {
+                    @extend .item-box;
+                    background: $blue-boxes;
+                }
+
+                div.item-box-gray {
+                    @extend .item-box;
+                    background: $gray-bg;
+                }
+            }
+        }
+
+        div.item-details {
+            display: none;
+            @include height(14);
+            width: 100%;
+            
+            div.box-details {
+                @extend .box-display;
+                @extend .shadow-default;
+                @extend .border-3;
+                @extend .v-top;
+                @extend .pointer;
+                @include min-width(12.125);
+                @include height(10.875);
+                @include margin(1.2, 0.3, 0, 1.2);
+                width: 17.4%;
+            }
+
+            div.box-details-gray {
+                @extend .box-gray;
+                @extend .box-details;
+            }
+
+            div.box-details-blue {
+                @extend .box-blue;
+                @extend .box-details;
+            }
+
+            div.box-details-green {
+                @extend .box-green;
+                @extend .box-details;
+            }
+
+            div.box-details-red {
+                @extend .box-red;
+                @extend .box-details;
+            }
+
+            div.box-details-down {
+                @extend .shadow-down;
+                @include margin(1.463, 0.037, -0.263, 1.463);
+            }
+
+            div.box-details-title {
+                @extend .font-bold;
+                @include margin(0.435, 0.418, 0.1, 0.418);
+            }
+
+            div.box-details-item {
+                @extend .box-display;
+                @extend .h-center;
+                @extend .v-top;
+                background-position: center top;
+                background-repeat: no-repeat;
+            }
+
+            div.box-details-metrics-item {
+                @extend div.box-details-item;
+                @include height(4.6);
+                @extend .width-half;
+
+                div.task {
+                    @extend .text-dark-14; 
+                }
+            }
+
+            div.arrow-number {
+                @include font-size(1.250);
+                @include height(3.375);
+                @include line-height(3.375);
+            }
+
+            div.arrow-number-light {
+                div.metric {
+                    @extend .contrasted-light-default;
+                    @extend div.arrow-number;
+                }
+            }
+
+            div.arrow-number-dark {
+                div.metric {
+                    @extend .contrasted-dark-default;
+                    @extend div.arrow-number;
+                }
+            }
+
+            div.arrow-up {
+                background-image: url(../images/arrow-up.png);    
+                @extend div.arrow-number-light;
+            }
+
+            div.arrow-down {
+                background-image: url(../images/arrow-down.png);    
+                @extend div.arrow-number-light;
+            }
+
+            div.arrow-right {
+                background-image: url(../images/arrow-right.png);    
+                @extend div.arrow-number-dark;
+            }
+
+            div.arrow-left {
+                background-image: url(../images/arrow-left.png);
+                @extend div.arrow-number-dark;
+            }
+
+            div.circle-idle {
+                background-image: url(../images/circle-idle.png);
+                @extend div.arrow-number-dark;
+            }
+
+            div.box-details-build-item {
+                @extend div.box-details-item;
+                @extend .width-half;
+                @include font-size(0.875);
+                @include padding-top(3.95);
+                @include height(2.7);
+                @include margin-top(1.35);
+            }
+
+            div.box-details-build-item-gray {
+                @extend div.box-details-build-item;
+                background-image: url(../images/pc-gray-big.png);
+                color: $gray;
+            }
+
+            div.box-details-build-item-blue {
+                @extend div.box-details-build-item;
+                background-image: url(../images/pc-blue-big.png);
+                color: $blue;
+            }
+
+            div.box-details-build-datetime {
+                @extend .text-dark-14;
+                @extend .h-center;
+            }
+
+            div.box-details-test-chart {
+                @extend div.box-details-item;
+                @include width(6.875);
+                @include height(6.875);
+                font-weight: normal;
+            }
+
+            div.box-details-test-value-container {
+                @extend div.box-details-item;
+                @extend .v-top;
+                @include width(5.25);
+                @include height(6.875);
+                @include line-height(6.875);
+            }
+
+            div.box-details-test-value-parent {
+                @extend .box-display;
+                @include height(2.98);
+            }
+
+            div.box-details-test-value {
+                @include line-height(2.15);
+                @include font-size(2.150);
+                @include margin-top(1.95);
+            }
+
+            div.box-details-test-passed {
+                @extend .text-dark-11;
+                @extend .h-center;
+                @include line-height(0.83);
+            }
+
+            div.box-details-test-code {
+                width: 90%;
+                @include height(2.0);
+                margin: auto;
+            }
+
+            div.box-details-test-code-green {
+                @extend .box-display;
+                @extend .v-top;
+                width: 0%;
+                height: 100%;
+                background: $green-alpha;
+            }
+
+            div.box-details-test-code-orange {
+                @extend .box-display;
+                @extend .v-top;
+                width: 100%;
+                height: 100%;
+                background: $orange-alpha;
+            }
+
+            div.box-details-test-code-text {
+                @extend .h-center;
+                position: relative;
+                @include margin-top(-2);
+
+                div.value {
+                    display: block;
+                    @extend .font-bold;
+                    @include line-height(1.3);
+                }
+
+                div.info {
+                    @extend .text-dark-11;
+                    @include line-height(0.63);
+                }
+            }
+
+            div.box-result {
+                @extend .box-display;
+                @extend .v-top;
+                @extend .h-center;
+                @extend .font-default;
+                width: 17.5%;
+
+                @include margin-top(1.2);
+
+                div.title {
+                    @extend .contrasted-dark-default;
+                }
+
+                div.message {
+                    @include margin-top();
+                }
+
+                div.description {
+                    @include font-size(1.8);
+                }
+
+                div.button {
+                    @extend .box-display;
+                    @extend .contrasted-light-default;
+                    @extend .border-gray;
+                    @extend .pointer;
+                    @include font-size(0.875);
+                    @include margin-top();
+                    @include padding(0.4, 0.6, 0.5, 0.6);
+                    background: $blue-boxes;
+                }
+
+                div.button-magn {
+                    @extend div.button;
+                    background: url(../images/magn.png) $blue-boxes no-repeat;
+                    @include background-position(0.7, 0.5);
+                    @include padding-left(2.2);
+                }
+
+                span {
+                    @extend .box-display;
+                    @include padding(0, 1, 0, 1);
+                }
+
+                select {
+                    @extend .box-display;
+                    @include margin-top(0.5);
+                }
+            }
+        }
+    }
+}
+
+.ng-hide {
+    display: none !important;
+}
